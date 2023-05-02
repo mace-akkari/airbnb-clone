@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function LoginPage() {
+export default function ResgisterPage() {
   return (
     <div className="mt-4 grow flex items-center justify-around">
       <div className="mb-64">
-        <h1 className="text-3xl text-center mb-4">Login</h1>
+        <h1 className="text-3xl text-center mb-4">Register</h1>
         <form className="max-w-md mx-auto">
           <input type="email" placeholder="Email"></input>
           <input type="password" placeholder="Password"></input>
