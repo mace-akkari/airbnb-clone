@@ -6,14 +6,15 @@ export default function ResgisterPage() {
       <div className="mb-64">
         <h1 className="text-3xl text-center mb-4">Register</h1>
         <form className="max-w-md mx-auto">
-          <input type="email" placeholder="Email"></input>
+          <input type="text" placeholder="John Doe"></input>
+          <input type="email" placeholder="Johndoe@mail.com"></input>
           <input type="password" placeholder="Password"></input>
           <button className="primary">Login</button>
           <div className="text-center py-2 text-gray-500">
-            No account?{" "}
-            <Link className="underline text-black" to={"/register"}>
+            Already have an account with us?{" "}
+            <Link className="underline text-black" to={"/login"}>
               {" "}
-              Register here
+              Login here
             </Link>
           </div>
         </form>
