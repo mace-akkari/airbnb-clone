@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
+require("dotenv").config();
 const app = express();
 
 app.use(express.json());
@@ -12,9 +13,7 @@ app.use(
   })
 );
 
-mongoose.connect(
-  "mongodb+srv://booking:J6JNNXnHhcXtLn1Z@cluster0.ur9nhzn.mongodb.net/?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.MONGO_URL);
 
 app.get("/test", (req, res) => {
   res.json("test ok");
