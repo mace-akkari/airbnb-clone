@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-export default function ResgisterPage() {
+export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function registerUser(e) {
     e.preventDefault();
-    axios.get("/test");
+    axios.post("/register", {
+      name,
+      email,
+      password,
+    });
   }
 
   return (
@@ -27,14 +31,15 @@ export default function ResgisterPage() {
             type="email"
             placeholder="Johndoe@mail.com"
             value={email}
-            onChange={(e) => setEmail(e.target.email)}
-          ></input>
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <input
             type="password"
             placeholder="Password"
+            autoComplete="on"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+          />
           <button className="primary">Register</button>
           <div className="text-center py-2 text-gray-500">
             Already have an account with us?{" "}
